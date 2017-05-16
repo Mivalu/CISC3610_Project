@@ -1,0 +1,22 @@
+html, body {
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+#textytext {
+	font-family: Helvetica,Verdana;
+	font-size: 10pt;
+	text-align: left;
+	width: 500px;
+	padding: 10px;
+}
+#textytext fieldset {
+	width: 250px;
+	text-align: center;
+}
+#timer {
+	width: 50px;
+}
+#helptext {
+	visibility: hidden;
+}
