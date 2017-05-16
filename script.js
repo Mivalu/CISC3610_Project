@@ -21,6 +21,7 @@ var itemy;
 var first = true;
 var playbtn = document.getElementById("startgame");
 var help = false;
+var finished = false;
 
 window.addEventListener('load',setup,false);
 
@@ -130,28 +131,34 @@ function gameOver(){
 	console.log("game over man");
 	playbtn.value = "Play Again";
 	playbtn.disabled = false;
+	finished = true;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	gamedone.onload = ctx.drawImage(gamedone,0,0);
+	
 }
 
 window.addEventListener('keydown', keyDown, false);
 
 function keyDown(e) {
- if (e.keyCode === 39) {
- 	pichuX += 10;
- 	redraw();
- }
- else if (e.keyCode === 37) {
- 	pichuX -= 10;
- 	redraw();
- }
- else if (e.keyCode === 38) {
- 	pichuY -= 10;
- 	redraw();
- }
- else if (e.keyCode === 40) {
- 	pichuY += 10;
- 	redraw();
- }
+	if (!finished){
+		if (e.keyCode === 39) {
+		 	pichuX += 10;
+		 	redraw();
+		}
+		else if (e.keyCode === 37) {
+		 	pichuX -= 10;
+		 	redraw();
+		}
+		else if (e.keyCode === 38) {
+		 	pichuY -= 10;
+		 	redraw();
+		}
+		else if (e.keyCode === 40) {
+		 	pichuY += 10;
+		 	redraw();
+		}
+	}
+	else
+		console.log("The game is done! You can't move!");
 }
 
