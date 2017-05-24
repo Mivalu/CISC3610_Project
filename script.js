@@ -3,6 +3,7 @@ var locales = JSON.parse(locations);
 var pointCount = 0;
 var first = true;
 var playbtn = document.getElementById("startgame");
+var helpbtn = document.getElementById("help");
 var help = false;
 
 var title = new Image();
@@ -93,10 +94,12 @@ function showHelp(){
 	if (help == false){
 		help = true;
 		document.getElementById("helptext").style.visibility = "visible";
+		helpbtn.value = "Hide Help"
 	}
 	else  {
 		help = false;
 		document.getElementById("helptext").style.visibility = "hidden";
+		helpbtn.value = "Show Help"
 	}
 }
 
